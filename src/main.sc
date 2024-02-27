@@ -41,14 +41,21 @@ theme: /
     state: Check
         state: CheckCity
             q: * $City *
-            # script: 
-            a: Город: {{$parseTree._City.name}}
-            # go!: /PlayTheGame
+            script: 
+                var cityName = $parseTree._City.name
+                if (cityName == $session.country.value.name) {
+                    $session.score = $session.score + 1
+                    $reactions.answer("Правильный ответ! Ваш счет {{$session.score}}");
+                } else {
+                    $session.score = $session.score - 1
+                    $reactions.answer("Неправильный ответ! Минус балл! Ваш счет {{$session.score}}");
+                    $reactions.answer("Должно быть {{$session.country.value.name}}?");
+                }
+            go!: /PlayTheGame
             
         state: NoMatch
             event!: noMatch
             a: Это не город!
-        
         
 
     state: stop
