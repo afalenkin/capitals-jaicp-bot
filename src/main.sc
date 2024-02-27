@@ -42,7 +42,7 @@ theme: /
         state: CheckCity
             q: * $City *
             a: Город: {{$parseTree._City.name}}
-            # go!: /PlayTheGame
+            go!: /PlayTheGame
             
         state: NoMatch
             event!: noMatch
@@ -56,5 +56,5 @@ theme: /
         script:
             $session = {};
             $client = {};
-        go!: /
+        go!: /Start
 
