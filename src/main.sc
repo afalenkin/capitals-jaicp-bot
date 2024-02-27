@@ -50,8 +50,8 @@ theme: /
         event: noMatch
         a: Это не похоже на ответ. Попробуйте еще раз.
     
-    #  state: stop
-    #     q!: $regex</stop>
-    #     a: Вы сдались? Набрано всего {{$session.score}} очков, для победы нужно набрать {{$session.score + 1}}.
-    #     go!: /Start
+    state: stop
+        q!: $regex</stop>
+        a: Вы сдались? Набрано всего {{$session.score}} очков, для победы нужно набрать {{$session.score + 1}}.
+        go!: /Start
     
