@@ -40,13 +40,13 @@ theme: /
             state: CheckCity
                 q: * $City *
                 script:
-                #     if ({$parseTree._City.name == $session.country.value.name) {
-                #         $reactions.answer("Верно! Плюс балл!");
-                #         $session.score = $session.score + 1
-                #     } else {
-                    $reactions.answer("Ошибка! Столица {{$session.country.value.country}} - {{$session.country.value.name}}! Минус балл!");
+                    if ({$parseTree._City.name == $session.country.value.name) {
+                        $reactions.answer("Верно! Плюс балл!");
+                        # $session.score = $session.score + 1
+                    } else {
+                        $reactions.answer("Ошибка! Столица {{$session.country.value.country}} - {{$session.country.value.name}}! Минус балл!");
                 #         $session.score = $session.score - 1
-                #     }
+                    }
                 go!: /PlayTheGame/Ask
                 
             state: LocalCatchAll
