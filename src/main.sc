@@ -18,8 +18,8 @@ theme: /
         a: Я хочу сыграть с тобой в игру: "Какой город является столицей страны". Если готов - ответь /go, когда надоест - ответь /stop
         
     state: Go
-            q!: $regex</go>
-            go!: /PlayTheGame
+        q!: $regex</go>
+        go!: /PlayTheGame
 
     state: Default
         event: noMatch
