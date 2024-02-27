@@ -44,7 +44,7 @@ theme: /
             state: CheckCity
                 q: * $City *
                 a: Город: {{$parseTree._City.name}}
-                go!: /PlayTheGame/ask
+                go!: /PlayTheGame/Ask
                 
             state: NoMatch
                 event!: noMatch
