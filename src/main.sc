@@ -31,8 +31,8 @@ theme: /
 
     state: PlayTheGame
         a: play
-        # script:
-        #     $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
+        script:
+            $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
         #     $reactions.answer("Какой город является столицей {{$session.country}}");
         #     $reactions.transition("/Check");
 
