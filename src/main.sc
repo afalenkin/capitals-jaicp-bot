@@ -22,7 +22,7 @@ theme: /
         q!: $regex</go>
         go!: /PlayTheGame
         
-    state: PlayTheGame
+    state: PlayTheGame || modal = true
         script:
             $session = {}
             $session.score = 0
