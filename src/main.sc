@@ -40,7 +40,7 @@ theme: /
 
     state: Check
         q: * $City *
-        script: 
+        # script: 
         a: Город: {{$parseTree._City.name}}
         # go!: /PlayTheGame
         
