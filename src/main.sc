@@ -29,7 +29,7 @@ theme: /
         script:
             $session = {}
             $session.score = 0
-        go!: /Check
+        go!: /PlayTheGame/Check
 
         state: ask
             script:
