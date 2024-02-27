@@ -34,7 +34,7 @@ theme: /
         script:
             $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
             $reactions.answer("Ваш счет {{$session.score}}");
-            $reactions.answer("Какой город является столицей {{$session.country.value.country}}");
+            $reactions.answer("Какой город является столицей {{$session.country.value.country}}?");
             $reactions.transition("/Check");
 
 
@@ -42,7 +42,7 @@ theme: /
         q: * $City *
         script: 
         a: Город: {{$parseTree._City.name}}
-        go!: /PlayTheGame
+        # go!: /PlayTheGame
         
 
     state: NoMatch
