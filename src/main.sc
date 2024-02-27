@@ -40,7 +40,7 @@ theme: /
             state: CheckCity
                 q: * $City *
                 script:
-                    if ({$parseTree._City.name == $session.country.value.name) {
+                    if ($parseTree._City.name == $session.country.value.name) {
                         $reactions.answer("Верно! Плюс балл!");
                         # $session.score = $session.score + 1
                     } else {
