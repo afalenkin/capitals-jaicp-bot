@@ -30,7 +30,6 @@ theme: /
             a: Это не похоже на ответ. Попробуйте еще раз.
 
     state: PlayTheGame
-        a: play
         script:
             $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
             $reactions.answer("Ваш счет {{$session.score}}");
