@@ -42,10 +42,6 @@ theme: /
                 a: Город: {{$parseTree._City.name}}
                 go!: /PlayTheGame/Ask
                 
-            state: NoMatch
-                event!: noMatch
-                a: Это не город!
-                
     state: Default
         event: noMatch
         a: Это не похоже на ответ. Попробуйте еще раз.
