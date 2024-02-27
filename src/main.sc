@@ -9,24 +9,16 @@ require: where/where.sc
 
 require: common.js
     module = zenbot-common
-
-require: hangmanGameData.csv
-    name = HangmanGameData
-    var = $HangmanGameData
     
 require: functions.js
-
-patterns:
-    $Word = $entity<HangmanGameData> || converter = function ($parseTree) {
-        var id = $parseTree.HangmanGameData[0].value;
-        return $HangmanGameData[id].value;
-        };
 
 theme: /
 
     state: Start
         q!: $regex</start>
-        script:  $session.score = 0
+        script:  
+            $session = {}
+            $session.score = 0
         a: Я хочу сыграть с тобой в игру: "Какой город является столицей страны"
         
         state: Go
@@ -47,7 +39,6 @@ theme: /
     state: Check
         q: * $City *
         script: 
-            if checkCity
         a: Город: {{$parseTree._City.name}}
         go!: /PlayTheGame
         
