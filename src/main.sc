@@ -44,7 +44,7 @@ theme: /
                 
             state: LocalCatchAll
                 event: noMatch
-                a: Это не похоже на ответ. Попробуйте еще раз.
+                a: Это не город.
                 
     state: Default
         event!: noMatch
