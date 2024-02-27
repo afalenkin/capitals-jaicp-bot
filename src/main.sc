@@ -42,8 +42,12 @@ theme: /
                 a: Город: {{$parseTree._City.name}}
                 go!: /PlayTheGame/Ask
                 
+            state: LocalCatchAll
+                event: noMatch
+                a: Это не похоже на ответ. Попробуйте еще раз.
+                
     state: Default
-        event: noMatch
+        event!: noMatch
         a: Это не похоже на ответ. Попробуйте еще раз.
     
     state: stop
