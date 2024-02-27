@@ -41,15 +41,16 @@ theme: /
     state: Check
         state: CheckCity
             q: * $City *
-            script: 
-                if ($parseTree._City.name == $session.country.value.name) {
-                    $session.score = $session.score + 1
-                    $reactions.answer("Правильный ответ! Ваш счет {{$session.score}}");
-                } else {
-                    $session.score = $session.score - 1
-                    $reactions.answer("Неправильный ответ! Минус балл! Ваш счет {{$session.score}}");
-                    $reactions.answer("Должно быть {{$session.country.value.name}}?");
-                }
+            script:
+                $reactions.answer("Должно быть {{$session.country.value.name}}?");
+                # if ($parseTree._City.name == $session.country.value.name) {
+                #     $session.score = $session.score + 1
+                #     $reactions.answer("Правильный ответ! Ваш счет {{$session.score}}");
+                # } else {
+                #     $session.score = $session.score - 1
+                #     $reactions.answer("Неправильный ответ! Минус балл! Ваш счет {{$session.score}}");
+                #     $reactions.answer("Должно быть {{$session.country.value.name}}?");
+                # }
             go!: /PlayTheGame
             
         state: NoMatch
