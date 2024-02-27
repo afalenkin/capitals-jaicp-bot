@@ -30,13 +30,13 @@ theme: /
         script:
             $session = {}
             $session.score = 0
-    #     go!: /PlayTheGame/Check
+        go!: /PlayTheGame/ask
 
-    #     state: ask
-    #         script:
-    #             $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
-    #             $reactions.answer("Ваш счет {{$session.score}}");
-    #             $reactions.answer("Какой город является столицей {{$session.country.value.country}}?");
+        state: ask
+            script:
+                $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
+                $reactions.answer("Ваш счет {{$session.score}}");
+                $reactions.answer("Какой город является столицей {{$session.country.value.country}}?");
     #         go!: /PlayTheGame/ask
 
 
