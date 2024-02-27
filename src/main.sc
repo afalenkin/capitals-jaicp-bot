@@ -51,7 +51,7 @@ theme: /
         
 
     state: stop
-        q!: $regex</stop>
+        intent!: /stop
         a: Вы сдались? Набрано всего {{$session.score}} очков, для победы нужно набрать {{$session.score + 1}}.
         script:
             $session = {};
