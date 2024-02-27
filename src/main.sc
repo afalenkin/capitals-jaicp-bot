@@ -52,8 +52,8 @@ theme: /
         
 
     state: stop
-        intent: /stop
-        a: Вы сдались? Набрано всего 0 очков, для победы нужно набрать 1.
+        intent!: /stop
+        a: Вы сдались? Набрано всего {{$session.score}} очков, для победы нужно набрать {{$session.score + 1}}.
         script:
             $session = {};
             $client = {};
