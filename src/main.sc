@@ -39,7 +39,7 @@ theme: /
         state: Check
             state: CheckCity
                 q: * $City *
-                a: Город: {{$parseTree._City.name}}
+                a: Город: {{$parseTree._City.name}} Страна: {{$session.country.value.country}}
                 go!: /PlayTheGame/Ask
                 
             state: LocalCatchAll
