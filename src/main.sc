@@ -47,7 +47,8 @@ theme: /
 
     state: NoMatch
         event!: noMatch
-        a: Это не город: {{$request.query}}
+        # a: Это не город: {{$request.query}}
+        a: Неправильный ответ, минус балл!
 
     state: stop
         intent: /stop
