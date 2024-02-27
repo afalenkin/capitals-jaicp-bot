@@ -32,7 +32,7 @@ theme: /
     state: PlayTheGame
         script:
             $session.country = $Countries[chooseRandCountryKey(Object.keys($Countries))];
-            $reactions.answer("Какой город является столицей {{$parseTree.session.country}}");
+            $reactions.answer("Какой город является столицей {{$session.country}}");
             $reactions.transition("/Check");
 
 
