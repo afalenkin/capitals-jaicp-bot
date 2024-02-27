@@ -42,8 +42,7 @@ theme: /
         state: CheckCity
             q: * $City *
             script: 
-                var cityName = $parseTree._City.name
-                if (cityName == $session.country.value.name) {
+                if ($parseTree._City.name == $session.country.value.name) {
                     $session.score = $session.score + 1
                     $reactions.answer("Правильный ответ! Ваш счет {{$session.score}}");
                 } else {
