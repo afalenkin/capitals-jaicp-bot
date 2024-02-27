@@ -35,14 +35,14 @@ theme: /
             $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
             $reactions.answer("Ваш счет {{$session.score}}");
             $reactions.answer("Какой город является столицей {{$session.country.value.country}}?");
-        go!: /Check
+            $reactions.transition("/Check");
 
 
     state: Check
         state: CheckCity
             q: * $City *
             script:
-                $reactions.answer("Должно быть {{$session.country.value.name}}?");
+                $reactions.answer("Должно быть {{$session.country.value.name}}");
                 # if ($parseTree._City.name == $session.country.value.name) {
                 #     $session.score = $session.score + 1
                 #     $reactions.answer("Правильный ответ! Ваш счет {{$session.score}}");
