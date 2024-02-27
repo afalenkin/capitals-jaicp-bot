@@ -64,7 +64,7 @@ theme: /
     state: stop
         q!: $regex</stop>
         script:
-            if ({{$session.score}} > {{$session.fail}}) {
+            if ($session.score > $session.fail) {
                 $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе");
             } else {
                 $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...");
