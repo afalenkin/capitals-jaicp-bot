@@ -63,9 +63,9 @@ theme: /
     
     state: stop
         q!: $regex</stop>
-        if: ({{$session.score}} > {{$session.fail}})
-          a:  Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе
-        else:
-          a: Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...
+        # if: ({{$session.score}} > {{$session.fail}})
+        a:  Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе
+        # else:
+        #   a: Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...
         go!: /Start
     
