@@ -21,10 +21,6 @@ theme: /
     state: Go
         q!: $regex</go>
         go!: /PlayTheGame
-
-    state: Default
-        event: noMatch
-        a: Это не похоже на ответ. Попробуйте еще раз.
         
     state: PlayTheGame
         script:
@@ -49,6 +45,10 @@ theme: /
             state: NoMatch
                 event!: noMatch
                 a: Это не город!
+                
+    state: Default
+        event: noMatch
+        a: Это не похоже на ответ. Попробуйте еще раз.
     
     #  state: stop
     #     q!: $regex</stop>
