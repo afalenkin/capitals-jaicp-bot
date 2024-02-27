@@ -36,13 +36,14 @@ theme: /
             $reactions.answer("Ваш счет {{$session.score}}");
             $reactions.answer("Какой город является столицей {{$session.country.value.country}}?");
             $reactions.transition("/Check");
+        go!: /Check
 
 
     state: Check
         state: CheckCity
             q: * $City *
-            script:
-                $reactions.answer("Должно быть {{$session.score}}");
+            # script:
+                # $reactions.answer("Должно быть {{$session.country.value.name}}");
                 # if ($parseTree._City.name == $session.country.value.name) {
                 #     $session.score = $session.score + 1
                 #     $reactions.answer("Правильный ответ! Ваш счет {{$session.score}}");
