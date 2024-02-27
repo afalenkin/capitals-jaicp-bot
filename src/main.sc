@@ -42,8 +42,7 @@ theme: /
         state: CheckCity
             q: * $City *
             a: Город: {{$parseTree._City.name}}
-            script:
-                $reactions.transition("/PlayTheGame");
+            go!: /PlayTheGame
             
         state: NoMatch
             event!: noMatch
@@ -52,7 +51,7 @@ theme: /
         
 
     state: stop
-        intent!: /stop
+        q!: $regex</stop>
         a: Вы сдались? Набрано всего {{$session.score}} очков, для победы нужно набрать {{$session.score + 1}}.
         script:
             $session = {};
