@@ -35,7 +35,7 @@ theme: /
             $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
             var test = $session.country
             # $reactions.answer(test);
-        a:  {{$session.country}}
+        a:  {{$session.country.country}}
         #     $reactions.answer("Какой город является столицей {{$session.country}}");
         #     $reactions.transition("/Check");
 
