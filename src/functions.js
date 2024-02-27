@@ -1,5 +1,5 @@
 function chooseRandomCountry() {
-    return  $Countries[chooseRandCountryKey(Object.keys($Countries))];
+    return $Countries[chooseRandCountryKey(Object.keys($Countries))];
 }
 
 function chooseRandCountryKey(keys) {
