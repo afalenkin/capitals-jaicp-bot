@@ -39,16 +39,16 @@ theme: /
 
 
     state: Check
-        q: * $City *
-        # script: 
-        a: Город: {{$parseTree._City.name}}
-        # go!: /PlayTheGame
-        
+        state CheckCity
+            q: * $City *
+            # script: 
+            a: Город: {{$parseTree._City.name}}
+            # go!: /PlayTheGame
 
-    state: NoMatch
-        event!: noMatch
-        # a: Это не город: {{$request.query}}
-        a: Неправильный ответ, минус балл!
+        state: NoMatch
+            event!: noMatch
+            # a: Это не город: {{$request.query}}
+            a: Неправильный ответ, минус балл!
 
     state: stop
         intent: /stop
