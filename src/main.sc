@@ -13,6 +13,7 @@ require: common.js
 require: functions.js
 
 theme: /
+    
     state: start
         q!: $regex</start>
         a: Я хочу сыграть с тобой в игру: "Какой город является столицей страны". Если готов - ответь /go, когда надоест - ответь /stop
