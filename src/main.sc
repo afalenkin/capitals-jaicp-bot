@@ -20,6 +20,9 @@ theme: /
         
     state: Go
         q!: $regex</go>
+        script:
+            $session = {}
+            $session.score = 0
         go!: /PlayTheGame
         
     state: PlayTheGame || modal = true
