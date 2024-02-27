@@ -20,16 +20,16 @@ theme: /
         
     state: Go
         q!: $regex</go>
-        # go!: /PlayTheGame
+        go!: /PlayTheGame
 
     state: Default
         event: noMatch
         a: Это не похоже на ответ. Попробуйте еще раз.
         
-    # state: PlayTheGame
-    #     script:
-    #         $session = {}
-    #         $session.score = 0
+    state: PlayTheGame
+        script:
+            $session = {}
+            $session.score = 0
     #     go!: /PlayTheGame/Check
 
     #     state: ask
