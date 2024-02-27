@@ -31,7 +31,7 @@ theme: /
 
     state: PlayTheGame
         script:
-            $session.country = getRandomCountry()
+            $session.country = chooseRandomCountry()
             $reactions.answer("Какой город является столицей {{$parseTree.session.country.country}}");
             $reactions.transition("/Check");
 

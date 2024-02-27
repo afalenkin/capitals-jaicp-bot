@@ -1,4 +1,4 @@
-function chooseRandomCountry(keys) {
+function chooseRandomCountry() {
     return  $Countries[chooseRandCountryKey(Object.keys($Countries))];
 }
 
