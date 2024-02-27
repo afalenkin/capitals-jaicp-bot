@@ -30,17 +30,18 @@ theme: /
             a: Это не похоже на ответ. Попробуйте еще раз.
 
     state: PlayTheGame
-        script:
-            $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
-            $reactions.answer("Какой город является столицей {{$session.country}}");
-            $reactions.transition("/Check");
+        a: play
+        # script:
+        #     $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
+        #     $reactions.answer("Какой город является столицей {{$session.country}}");
+        #     $reactions.transition("/Check");
 
 
-    state: Check
-        q: * $City *
-        script: 
-        a: Город: {{$parseTree._City.name}}
-        go!: /PlayTheGame
+    # state: Check
+    #     q: * $City *
+    #     script: 
+    #     a: Город: {{$parseTree._City.name}}
+    #     go!: /PlayTheGame
         
 
     state: NoMatch
