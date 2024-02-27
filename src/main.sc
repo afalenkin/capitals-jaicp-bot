@@ -29,6 +29,7 @@ theme: /
         script:
             $session = {}
             $session.score = 0
+            $session.fail = 0
         go!: /PlayTheGame/Ask
 
         state: Ask
@@ -48,7 +49,7 @@ theme: /
                         $session.score = $session.score + 1
                     } else {
                         $reactions.answer("Ошибка! Столица {{$session.country.value.country}} - {{$session.country.value.name}}! Минус балл!");
-                        $session.score = $session.score - 1
+                        $session.fail = $session.fail + 1
                     }
                 go!: /PlayTheGame/Ask
                 
@@ -62,6 +63,10 @@ theme: /
     
     state: stop
         q!: $regex</stop>
-        a: Вы сдались? Набрано всего {{$session.score}} очков, для победы нужно набрать {{$session.score + 1}}.
+        a: Вы сдались?
+        if: {{$session.score}} > {{$session.fail}}
+          a:  Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе
+        else:
+          a: Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...
         go!: /Start
     
