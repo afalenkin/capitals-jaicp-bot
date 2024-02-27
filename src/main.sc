@@ -63,7 +63,6 @@ theme: /
     
     state: stop
         q!: $regex</stop>
-        a: Вы сдались?
         if: {{$session.score}} > {{$session.fail}}
           a:  Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе
         else:
