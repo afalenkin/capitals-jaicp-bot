@@ -37,11 +37,11 @@ theme: /
             $reactions.transition("/Check");
 
 
-    # state: Check
-    #     q: * $City *
-    #     script: 
-    #     a: Город: {{$parseTree._City.name}}
-    #     go!: /PlayTheGame
+    state: Check
+        q: * $City *
+        script: 
+        a: Город: {{$parseTree._City.name}}
+        go!: /PlayTheGame
         
 
     state: NoMatch
