@@ -35,7 +35,7 @@ theme: /
         state: Ask
             script:
                 $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
-                $reactions.answer("Ваш счет {{$session.score}}");
+                $reactions.answer("Ваш счет {{$session.score}} - правильно, {{$session.fail}} - неправильно");
                 $reactions.answer("Какой город является столицей {{$session.country.value.country}}?");
             go!: /PlayTheGame/Check
 
@@ -64,7 +64,7 @@ theme: /
     state: stop
         q!: $regex</stop>
         script:
-            if ($session.score > $session.fail) {
+            if ($session.score < $session.fail) {
                 $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе");
             } else {
                 $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...");
