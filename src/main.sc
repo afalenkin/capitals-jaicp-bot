@@ -19,7 +19,7 @@ theme: /
         a: Я хочу сыграть с тобой в игру: "Какой город является столицей страны". Если готов - ответь /go, когда надоест - ответь /stop
         
     state: Go
-q!: $regex</go>
+        q!: $regex</go>
         script:
             $session = {}
             $session.score = 0
@@ -32,7 +32,7 @@ q!: $regex</go>
             $session.fail = 0
         go!: /PlayTheGame/Ask
 
-        state: Ask
+                    state: Ask
             script:
                 $session.country = $Geography[chooseRandCountryKey(Object.keys($Geography))];
                 $reactions.answer("Ваш счет {{$session.score}} - правильно, {{$session.fail}} - неправильно");
