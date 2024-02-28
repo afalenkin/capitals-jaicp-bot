@@ -19,7 +19,7 @@ theme: /
         a: Я хочу сыграть с тобой в игру: "Какой город является столицей страны". Если готов - ответь /go, когда надоест - ответь /stop
         
     state: Go
-    q!: $regex</go>
+        q!: $regex</go>
         script:
             $session = {}
             $session.score = 0
