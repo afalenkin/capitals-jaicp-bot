@@ -1,10 +1,42 @@
 <test>
-  
-    <!--<test-case>        -->
-    <!--    <q>приветствую</q>-->
-    <!--    <a>Это не город!</a>-->
-    <!--    <q>Вышний волочёк</q>-->
-    <!--    <a>Город: Вышний Волочек</a>-->
-    <!--</test-case>-->
-
+    <test-case id="1">
+        <q>/start</q>
+        <a state = "/Start"/>
+    </test-case>
+    <test-case id="2">
+        <q>wrong</q>
+        <a>Это не похоже на ответ. Попробуйте еще раз.</a>
+    </test-case>
+    <test-case id="3">
+        <q>/stop</q>
+        <a state = "/stop"/>
+        <a state = "/Start"/>
+    </test-case>
+    <test-case id="3">
+        <q>/stop</q>
+        <a state = "/stop"/>
+        <a state = "/Start"/>
+    </test-case>
+    <test-case id="4">
+        <context var="session">
+            {
+                "score":5,
+                "fail":10
+            }
+        </context>
+        <q>/stop</q>
+        <a>Вы назвали правильно 5 столиц, неправильно 10. Географ из вас конечно так себе</a>
+        <a state = "/Start"/>
+    </test-case>
+    <test-case id="4">
+        <context var="session">
+            {
+                "score":11,
+                "fail":1
+            }
+        </context>
+        <q>/stop</q>
+        <a>Вы назвали правильно 11 столиц, неправильно 1. Ну что сказать, неплохо, неплохо...</a>
+        <a state = "/Start"/>
+    </test-case>
 </test>
