@@ -62,12 +62,12 @@ theme: /
         a: Это не похоже на ответ. Попробуйте еще раз.
     
     state: stop
-    q!: $regex</stop>
-    script:
-        if ($session.score < $session.fail) {
-            $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе");
-        } else {
-            $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...");
-        }
-    go!: /Start
+        q!: $regex</stop>
+        script:
+            if ($session.score < $session.fail) {
+                $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Географ из вас конечно так себе");
+            } else {
+                $reactions.answer("Вы назвали правильно {{$session.score}} столиц, неправильно {{$session.fail}}. Ну что сказать, неплохо, неплохо...");
+            }
+        go!: /Start
     
